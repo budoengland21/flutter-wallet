@@ -24,8 +24,6 @@ class displayImageQR extends StatelessWidget {
      int last = await storage.lastItem(); //get index of last item so as  avoid id's being same in databse
      idTrack = last;
 
-    // if app getting slow, don't update id, wont matter since only delete by name
-    // duplicate ids wont have an effect !!!_________________________________
 
 
 
@@ -43,9 +41,9 @@ class displayImageQR extends StatelessWidget {
 
   }
   Future<bool> BackPressed() async {
-    //put back normal brightness
-    FlutterScreen.resetBrightness();
-   // Navigator.pop(QRcontext,true);
+
+    FlutterScreen.resetBrightness(); // reset brightness not working with ios
+
     return true;
   }
   void updateCard() async{ // just substitute width with index,(workaround) since we dont use width in modify card

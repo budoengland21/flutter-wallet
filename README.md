@@ -1,6 +1,7 @@
 # wallet
 
 A new Flutter application.
+An application that allows you to store rewards of your card, by taking a picture using ML kit and storing as barcode/QR code.
 
 ## Getting Started
 

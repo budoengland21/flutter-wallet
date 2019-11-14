@@ -6,6 +6,11 @@ An application that allows you to store rewards of your card, by taking a pictur
 
 NOTE: App not currently available in IOS, must be tested on MAC OS before deployed..
 
+To add to IOS store:
+-add icons
+-flutter brightness plugin full functionality not available for IOS yet.
+- test widget and sizes
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

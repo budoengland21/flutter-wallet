@@ -2,7 +2,9 @@
 
 A new Flutter application.
 An application that allows you to store rewards of your card, by taking a picture using ML kit and storing as barcode/QR code.
-NOTE: App not curretly available in IOS, must be tested on MAC OS before deployed..
+
+
+NOTE: App not currently available in IOS, must be tested on MAC OS before deployed..
 
 ## Getting Started
 

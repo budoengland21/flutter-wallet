@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/block_picker.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:wallet/BarcodeCard.dart';
 import 'package:wallet/cardTappedBarcode.dart';
 import 'package:wallet/cardTappedQR.dart';
@@ -228,7 +227,7 @@ class _modifyCardState extends State<modifyCard> {
 
         onPressed:(){
           if (widget.barcode == null){//if updating
-            print('pass');
+          
             updateDatabase(widget.barcodeProperty, nickname.text, colorToHex(pickerColor), oldTitle);
             updateStateOfList(widget.barcodeProperty,title, pickerColor);
             Navigator.pop(context);//pop it and go back to where your barcode displayed
@@ -263,8 +262,7 @@ void insertDatabase(BarcodeProperty card)   {
 }
 void updateDatabase(BarcodeProperty b, String name, String pick, String oldTitle) {
   DataStorage storage = DataStorage();
-  print('$name');
-  print('CHANGEDDDD');
+
   b.setColor(pick);
   b.setName(name);
   storage.updateItem(b, oldTitle);

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wallet/cardTappedQR.dart';
 import 'main.dart';
-import 'BarcodeCard.dart';
 import 'cardTappedBarcode.dart';
 
 
@@ -57,7 +56,7 @@ class makeListView extends StatelessWidget {
             ),
             //run code to display QR image//barcode
             onTap:(){
-              print(items[index].getFormat().toString());
+             
               //IF its is a QR code
               if (items[index].getFormat().toString() == 'QR CODE'){
                   Navigator.push(fam, MaterialPageRoute(builder: (context)=> displayImageQR(items[index],index),));

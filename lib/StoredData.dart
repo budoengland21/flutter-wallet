@@ -2,13 +2,13 @@ import 'dart:io';
 import 'main.dart';
 import 'package:flutter/material.dart';
 import 'package:wallet/BarcodeCard.dart';
-import 'cardNamePage.dart';
+
 import 'BarcodeCard.dart';
-import 'cardTappedBarcode.dart';
+
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'testFile.dart';
+
 
 
 // we use a singleton where this class
@@ -52,7 +52,7 @@ class DataStorage {
   factory DataStorage(){
     if (dataStorage == null) {
       dataStorage = DataStorage._createInstance(); // goes to line 42
-      print("i am null");
+      
     }
     return dataStorage;
   }
@@ -63,7 +63,7 @@ class DataStorage {
   Future<Database> getDatabase() async {
     if (databaseFile == null) {
       databaseFile = await initializeDatabase(); // line 70, runs once
-      print('initilaizer null');
+      
       // even if app restarts because it's not null
     }
     return databaseFile; // which is a table
@@ -88,7 +88,7 @@ class DataStorage {
   //create database so create a table
   void makeDatabase(Database db, int version) async {
     try{
-      print("CREATEDDDDDDDDDDDDDDDDDDDD $tableName");
+
     await db.execute('CREATE TABLE '
         '$tableName' // title of table
         '($id INTEGER PRIMARY KEY, $colName TEXT, $colColors TEXT, $colDisplayCode TEXT, $colFormat TEXT)');
@@ -116,8 +116,7 @@ class DataStorage {
      //maps the objects since inserting to database takes in mapped items:
     Map<String, dynamic> mapIt(BarcodeProperty b) {
 
-    print(idTrack);
-    print('idtrack^');
+  
 
       //the map should be same name as table column titles so as they can be put in right place
       return {
@@ -141,7 +140,7 @@ Future<List<BarcodeProperty>> getAll() async{
     Database db = await getDatabase();
     List maps =  await db.query(tableName);
 
-    print(maps.length);
+    
     //this method turns List<map> to list
 
     //items update to have database Cards
@@ -169,8 +168,7 @@ Future<void> updateItem(BarcodeProperty b, String s) async{
     // no errors since id's will be different
     //db.update(tableName, mapIt(b),where: '$colName=?', whereArgs: [b.getName()]);
     // db.update(tableName, mapIt(b),where: '$colColors=?', whereArgs: [b.color]);
-    print(s);
-    print('oldtitie');
+    
   int count= await  db.rawUpdate('UPDATE $tableName SET $colName=?, $colColors=? WHERE $colName=? ',
                                    [b.getName(), b.color, s ]);
   print('updated: $count');
@@ -221,7 +219,7 @@ Future<int> lastItem() async{
 
     int Lastindex = result.length-1;
 
-    print(result[Lastindex].values.first);
+ 
 
     return result[Lastindex].values.first;} // gets id of the last item.
 

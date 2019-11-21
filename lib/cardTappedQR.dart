@@ -3,7 +3,6 @@ import 'package:flutter_mobile_vision/flutter_mobile_vision.dart';
 import 'package:wallet/main.dart' as prefix0;
 import 'main.dart';
 import 'BarcodeCard.dart';
-import 'package:barcode_flutter/barcode_flutter.dart';
 import 'cardNamePage.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:wallet/StoredData.dart';

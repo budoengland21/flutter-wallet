@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:sqflite/sqflite.dart';
+
 import 'package:wallet/BarcodeCard.dart';
 import 'package:wallet/StoredData.dart';
 import 'package:wallet/listView%20items.dart';
@@ -14,7 +13,9 @@ import 'BarcodeCard.dart';
 
 void main(){
   runApp(
-      MaterialApp(home: cardStack(),));
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: cardStack(),));
 
 
 }
@@ -69,7 +70,7 @@ class _cardStackState extends State<cardStack> {
   // retrieve database if exists, set the idTracker, obtain barcode property(cards) to build the listview(makeListView method)
   @override //________________________________________________________________________
   void initState() {
-    print("came init state");
+    
     super.initState();
     FlutterMobileVision.start(); //start the ML and asks permission before app starts, only runs once if permission denied close app and rerun
     //database retrieval

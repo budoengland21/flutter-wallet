@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screen/flutter_screen.dart';
 import 'package:wallet/cardNamePage.dart';
-import 'package:wallet/main.dart' as prefix0;
 import 'StoredData.dart';
 import 'main.dart';
 import 'BarcodeCard.dart';
@@ -37,8 +36,7 @@ class displayImageBar extends StatelessWidget {
  void updateCard() async{ // just substitute width with index,(workaround) since we dont use width in modify card
     //DataStorage storage = DataStorage();
     Navigator.push(fam, MaterialPageRoute(builder: (context)=> modifyCard(barcode,null )) );//1 = means that updating card
-   print("CAME FIRSTTTTT");
-
+   
  }
 
   Future<bool> BackPressed() async {

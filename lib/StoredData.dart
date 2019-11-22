@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'main.dart';
-import 'package:flutter/material.dart';
+
 import 'package:wallet/BarcodeCard.dart';
 
 import 'BarcodeCard.dart';

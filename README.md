@@ -6,6 +6,9 @@ An application that allows you to store rewards of your card, by taking a pictur
 
 NOTE: App not currently available in IOS, must be tested on MAC OS before deployed..
 
+
+Google Play store link: https://play.google.com/store/apps/details?id=first.wallet
+
 To add to IOS store:
 -add icons
 -flutter brightness plugin full functionality not available for IOS yet.

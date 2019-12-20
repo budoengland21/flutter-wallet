@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_screen/flutter_screen.dart';
 import 'package:wallet/cardNamePage.dart';
@@ -41,6 +42,8 @@ class displayImageBar extends StatelessWidget {
 
   Future<bool> BackPressed() async {
     //put back normal brightness
+    //reset the orientation also
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown,DeviceOrientation.portraitUp]);
     FlutterScreen.resetBrightness();
     // Navigator.pop(QRcontext,true);
     return true;
@@ -52,6 +55,8 @@ class displayImageBar extends StatelessWidget {
 
     FlutterScreen.setBrightness(1);//increase brightness
     FlutterScreen.keepOn(true);
+    // set to landscape when barcode tapped
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight]);
 
 
 

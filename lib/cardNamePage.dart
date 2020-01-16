@@ -158,7 +158,10 @@ class _modifyCardState extends State<modifyCard> {
                                         availableColors: [
                                           Colors.red,
                                           Colors.purple,
-                                          Colors.lightBlue,
+                                          Colors.green,
+                                          Colors.teal,
+                                          Colors.pinkAccent,
+                                          Colors.deepPurpleAccent,
                                           Colors.yellow,
                                           Colors.orange,
                                           Colors.cyan,

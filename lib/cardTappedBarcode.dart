@@ -39,11 +39,30 @@ class displayImageBar extends StatelessWidget {
     Navigator.push(fam, MaterialPageRoute(builder: (context)=> modifyCard(barcode,null )) );//1 = means that updating card
    
  }
-
+  BarCodeType obtainFormat(){
+    //BarCodeType.Code128
+  // BarCodeType.Code39, BarCodeType.Code93,BarCodeType.CodeEAN8,BarCodeType.CodeEAN13,BarCodeType.CodeUPCA,BarCodeType.CodeUPCE
+    if (barcode.getFormat() == "CODE 128"){
+      return BarCodeType.Code128;
+    }else if (barcode.getFormat() == "CODE 39"){
+      return BarCodeType.Code39;
+    }else if (barcode.getFormat() == "CODE EAN8"){
+      return BarCodeType.CodeEAN8;
+    }else if(barcode.getFormat() == "CODE EAN13"){
+      return BarCodeType.CodeEAN13;
+    }else if(barcode.getFormat() == "CODE UPCA"){
+      return BarCodeType.CodeUPCA;
+    }else if(barcode.getFormat() == "CODE 93"){
+      return BarCodeType.Code93;
+    }
+    else{
+      return BarCodeType.CodeUPCE;
+    }
+  }
   Future<bool> BackPressed() async {
     //put back normal brightness
     //reset the orientation also
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown,DeviceOrientation.portraitUp]);
+   // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown,DeviceOrientation.portraitUp]);
     FlutterScreen.resetBrightness();
     // Navigator.pop(QRcontext,true);
     return true;
@@ -55,8 +74,9 @@ class displayImageBar extends StatelessWidget {
 
     FlutterScreen.setBrightness(1);//increase brightness
     FlutterScreen.keepOn(true);
+    obtainFormat();
     // set to landscape when barcode tapped
-    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight]);
+    //SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft,DeviceOrientation.landscapeRight]);
 
 
 
@@ -126,8 +146,7 @@ class displayImageBar extends StatelessWidget {
                                  //padding: EdgeInsets.all(20),
                                  hasText: true,
                                  lineWidth: 1.5,
-
-                                 codeType: BarCodeType.Code128,
+                                  codeType:obtainFormat(),
                                 barHeight: 150,//get barheight and apply white background
 //use container wrapped in white background
                                 ),
@@ -151,12 +170,3 @@ class displayImageBar extends StatelessWidget {
   }
 }
 
-/*BarCodeImage(
-data: "1234ABCD",
-hasText: true,
-codeType: BarCodeType.Code39,
-barHeight: 8,//get barheight and apply white background
-//use container wrapped in white background
-
-
-)*/

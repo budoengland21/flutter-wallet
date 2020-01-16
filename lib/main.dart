@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
 import 'package:wallet/BarcodeCard.dart';
 import 'package:wallet/StoredData.dart';
 import 'package:wallet/listView%20items.dart';
@@ -92,6 +92,7 @@ class _cardStackState extends State<cardStack> {
           .of(context)
           .size
           .height;
+         // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown,DeviceOrientation.portraitUp]);
 
 
       return Scaffold(
